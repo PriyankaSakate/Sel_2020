@@ -1,5 +1,6 @@
 package com.visioit.freecrm.hybridframework.testbase;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 
@@ -14,7 +15,7 @@ public class TestBase {
 	public BrowserFactory browserFactory;
 	public ExcelDataProvider excelDataProvider;
 	public Helper helper;
-
+	public WebDriver driver;
 	@BeforeSuite
 	public void init() {
 
@@ -22,14 +23,14 @@ public class TestBase {
 		excelDataProvider = new ExcelDataProvider();
 		configDataProvider = new ConfigDataProvider();
 		browserFactory = new BrowserFactory();
-		/*
-		 * driver = BrowserFactory.browserSetUp("chrome", "https://www.crmpro.com/");
-		 */
+		
+		 //driver = BrowserFactory.browserSetUp("chrome", "https://www.crmpro.com/");
+		 
 	}
 
 	@AfterMethod
 	public void tearDown() {
-		// browserFactory.quitBrowser();
+		 browserFactory.quitBrowser();
 	}
 
 }

@@ -8,9 +8,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class BrowserFactory {
-	public  WebDriver driver;
+	public static  WebDriver driver;
 
-	public WebDriver browserSetUp(String bname, String url) {
+	public static WebDriver browserSetUp(String bname, String url) {
 
 		if (bname.equals("firefox")) {
 

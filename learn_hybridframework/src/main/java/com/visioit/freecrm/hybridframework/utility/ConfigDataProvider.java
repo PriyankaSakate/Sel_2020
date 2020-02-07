@@ -12,7 +12,7 @@ public class ConfigDataProvider {
 		try {
 			FileInputStream fins = new FileInputStream
 					(new File
-							(".//config//config.properties"));
+							(".//ConfigData//config.properties"));
 
 			prop = new Properties();
 

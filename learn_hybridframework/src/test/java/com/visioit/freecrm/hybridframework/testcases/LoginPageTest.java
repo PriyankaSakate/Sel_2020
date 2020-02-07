@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import com.visioit.freecrm.hybridframework.pages.LoginPage;
 import com.visioit.freecrm.hybridframework.testbase.TestBase;
+import com.visioit.freecrm.hybridframework.utility.BrowserFactory;
 
 public class LoginPageTest extends TestBase {
 
@@ -17,7 +18,7 @@ public class LoginPageTest extends TestBase {
 
 	@BeforeMethod
 	public void setUp() {
-		driver = browserFactory.browserSetUp(configDataProvider.getKey("browser"), configDataProvider.getKey("qaUrl"));
+		driver = BrowserFactory.browserSetUp(configDataProvider.getKey("browser"), configDataProvider.getKey("qaUrl"));
 		// login=PageFactory.initElements(driver,LoginPage.class );
 		login = new LoginPage(driver);
 	}

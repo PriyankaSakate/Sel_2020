@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ui.Select;
 
 public class Helper {
 	// handle the i frame
@@ -69,6 +70,20 @@ public class Helper {
 
 		}	
 			
+		
+		public static void selectDropDown(WebElement ele, int index) {
+			new Select(ele).selectByIndex(index);
+			
+		}
+		public static void selectDropDown(WebElement ele, String value) {
+			new Select(ele).selectByValue(value);
+			
+		}
+		public static void selectDropDown(String visibleText,WebElement ele) {
+			new Select(ele).selectByVisibleText(visibleText);
+			
+		}
+		
 		public static void mouseHoverAndClickActions(WebDriver driver, 
 				WebElement ele, WebElement ele1){
 					new Actions(driver).moveToElement(ele).

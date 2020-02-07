@@ -8,32 +8,31 @@ import org.openqa.selenium.support.PageFactory;
 import com.visioit.freecrm.hybridframework.utility.Helper;
 
 public class HomePage {
-	 WebDriver driver;
-		
-	@FindBy(xpath="//a[text()='Contacts']")
+	WebDriver driver;
+
+	@FindBy(xpath = "//a[text()='Contacts']")
 	WebElement contactsLink;
-	
-	@FindBy(xpath="//a[text()='New Contact']")
+
+	@FindBy(xpath = "//a[text()='New Contact']")
 	WebElement newContactsLink;
-	
-	@FindBy(xpath="//td[@align='left' and @class='headertext']")
+
+	@FindBy(xpath = "//td[@align='left' and @class='headertext']")
 	WebElement loggedUserName;
-	
-	
-	public HomePage(WebDriver driver){
-				this.driver=driver;
-				PageFactory.initElements(driver, this);
+
+	public HomePage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
-	
-	public String verifyloggedUserName(){
-	return loggedUserName.getText();		
+
+	public String verifyloggedUserName() {
+		return loggedUserName.getText();
 	}
+
 	// i frame name : mainpanel
-	public NewContactPage navigateToNewContactsPage(){			
-		Helper.mouseHoverAndClickActions(driver, 
-				contactsLink,newContactsLink);
-		//newContactsLink.click();
-		return new NewContactPage(driver);	
+	public NewContactPage navigateToNewContactsPage() {
+		Helper.mouseHoverAndClickActions(driver, contactsLink, newContactsLink);
+		// newContactsLink.click();
+		return new NewContactPage(driver);
 	}
 
 }
